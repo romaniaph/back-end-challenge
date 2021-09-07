@@ -29,11 +29,6 @@ public class VagaController {
         return vagaRepository.getVagaById(vagaId);
     }
 
-    @GetMapping("/vaga/{estabelecimento}")
-    public List<Vaga> getVagaByEstabelecimento(@PathVariable("estabelecimento") String estabelecimento) {
-        return vagaRepository.getVagaByEstabelecimento(estabelecimento);
-    }
-
     @DeleteMapping("/vaga/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletar(@PathVariable("id") String vagaId) {

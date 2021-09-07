@@ -24,8 +24,6 @@ public class DynamoDbConfiguration {
                         new AwsClientBuilder.EndpointConfiguration(
                                 "dynamodb.sa-east-1.amazonaws.com",
                                 "sa-east-1"
-//                                "http://localhost:4569",
-//                                "sa-east-1"
                         )
                 )
                 .withCredentials(

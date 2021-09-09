@@ -28,7 +28,7 @@ public class UsuarioController {
         return usuarioRepository.getUsuarioById(usuarioId);
     }
 
-    @GetMapping("/usuario/login/{email}/{senha}")
+    @GetMapping("/login/{email}/{senha}")
     public Usuario getUsuarioByLogin(@PathVariable("email") String email, @PathVariable("senha") String senha) {
         return usuarioRepository.getUsuarioByLogin(email,senha);
     }

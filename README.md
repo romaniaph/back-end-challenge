@@ -42,7 +42,7 @@ Exemplo de Retorno se email já existir no banco:
 #### ec2-54-94-108-33.sa-east-1.compute.amazonaws.com:8083/usuario
 
 ### @Get – Retorna o usuário em caso do login do usuário estar correto ou null caso esteja incorreto
-#### ec2-54-94-108-33.sa-east-1.compute.amazonaws.com:8083/usuario/login/{{email}}/{{senha}}
+#### ec2-54-94-108-33.sa-east-1.compute.amazonaws.com:8083/login/{{email}}/{{senha}}
 
 ### @Get - Ler usuário pelo ID
 #### ec2-54-94-108-33.sa-east-1.compute.amazonaws.com:8083/usuario/{id}

@@ -29,7 +29,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/usuario/login/{email}/{senha}")
-    public boolean getUsuarioByLogin(@PathVariable("email") String email, @PathVariable("senha") String senha) {
+    public Usuario getUsuarioByLogin(@PathVariable("email") String email, @PathVariable("senha") String senha) {
         return usuarioRepository.getUsuarioByLogin(email,senha);
     }
 

@@ -54,16 +54,16 @@ public class UsuarioRepository {
         return false;
     }
 
-    public boolean getUsuarioByLogin(String email, String senha) {
+    public Usuario getUsuarioByLogin(String email, String senha) {
 
         List<Usuario> usuarios = getAll();
 
         for (Usuario usuario : usuarios) {
             if (usuario.getEmail().equals(email) && usuario.getSenha().equals(senha)) {
-                return true;
+                return usuario;
             }
         }
-        return false;
+        return null;
     }
 
     public List<Usuario> getAll() {

@@ -3,7 +3,6 @@ package br.com.fiap.xcave.challenge.controller;
 import br.com.fiap.xcave.challenge.entity.Usuario;
 import br.com.fiap.xcave.challenge.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,15 +28,18 @@ public class UsuarioController {
         return usuarioRepository.getUsuarioById(usuarioId);
     }
 
+    @GetMapping("/usuario/login/{email}/{senha}")
+    public boolean getUsuarioByLogin(@PathVariable("email") String email, @PathVariable("senha") String senha) {
+        return usuarioRepository.getUsuarioByLogin(email,senha);
+    }
+
     @DeleteMapping("/usuario/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletar(@PathVariable("id") String usuarioId) {
-        usuarioRepository.delete(usuarioId);
+    public String deletar(@PathVariable("id") String usuarioId) {
+        return usuarioRepository.delete(usuarioId);
     }
 
     @PutMapping("/usuario/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void atualizar(@PathVariable("id") String usuarioId, @RequestBody Usuario usuario) {
-        usuarioRepository.update(usuarioId,usuario);
+    public String atualizar(@PathVariable("id") String usuarioId, @RequestBody Usuario usuario) {
+        return usuarioRepository.update(usuarioId,usuario);
     }
 }

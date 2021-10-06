@@ -23,11 +23,6 @@ public class VagaController {
         return vagaRepository.getAll();
     }
 
-    @GetMapping("/vaga/estabelecimento/{estabelecimento}")
-    public List<Vaga> getVagaByEstabelecimento(@PathVariable("estabelecimento") String estabelecimento){
-        return vagaRepository.getVagaByEstabelecimento(estabelecimento);
-    }
-
     @GetMapping("/vaga/{id}")
     public Vaga getVagaById(@PathVariable("id") String vagaId) {
         return vagaRepository.getVagaById(vagaId);

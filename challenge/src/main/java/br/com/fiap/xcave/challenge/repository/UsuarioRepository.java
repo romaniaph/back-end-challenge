@@ -18,6 +18,8 @@ public class UsuarioRepository {
     private DynamoDBMapper dynamoDBMapper;
 
     public Usuario save(Usuario usuario) {
+
+        usuario.setAdmin(false);
         
         if (!checaUsuarioByEmail(usuario.getEmail())){
             dynamoDBMapper.save(usuario);
